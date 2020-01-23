@@ -1,0 +1,8 @@
+1. Create an SPA feature branch
+   Stub out a mobile authenticator in the SPA
+   Get SPA calls back to mobile side working
+
+2. Load details from config
+
+3. Get error handling working
+   Try to return an error object from mobile to the SPA
