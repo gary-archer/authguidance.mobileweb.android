@@ -4,18 +4,27 @@ SETUP
 
 2. console.log('GJA: ...') statements from SPA show up in logcat
 
-3.
+3. @JavascriptInterface makes mobileAuthenticator methods available to SPA
 
 NEXT STEPS
 ----------
-1. Get SPA calls back to mobile side working with basic inputs and outputs
-   Understand async handling
+1. Get startup code working, including loading of configuration file
 
-2. Stub out interfaces
-   WebViewAuthenticator to fit in with SPA coding model
-   Possibly use an internal class to fit in with mobile coding model
-   Get calls working with debug output
+2. Create authenticators
+   webView.authenticator needs a reference to the webview
+   Get async callbacks working
+   Use GUIDs for unique window callback references
 
-3. Get startup / config working in the mobile app
-   Store any errors to return to the Web UI later
-   Get error handling working early
+3. Startup errors
+   Store these in the mobile app and return to the web view later
+
+4. Get login redirects working once refresh fails
+
+5. Get responses working via claimed https schemes
+   Tricky in terms of developer setup
+
+CURRENT STATE
+-------------
+Working on feature branch of Final SPA
+Working on Android mobile web view side by side
+Async handling in progress but mobile authenticator needs a reference to the web view

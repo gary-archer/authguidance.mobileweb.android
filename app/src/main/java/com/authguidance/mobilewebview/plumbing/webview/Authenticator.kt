@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.plumbing.oauth
+package com.authguidance.mobilewebview.plumbing.webview
 
 import android.app.Activity
 import android.content.Intent
@@ -13,7 +13,7 @@ interface Authenticator {
 
     // Try to get an access token
     // suspend fun getAccessToken(): String
-    fun getAccessToken(input: String): String
+    suspend fun getAccessToken(callbackName: String): String
 
     // Try to refresh an access token
     // suspend fun refreshAccessToken(): String

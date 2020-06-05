@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.authguidance.mobilewebview.databinding.FragmentHostBinding
-import com.authguidance.mobilewebview.views.webview.CustomWebViewClient
-import com.authguidance.mobilewebview.plumbing.oauth.AuthenticatorImpl
-import com.authguidance.mobilewebview.views.webview.CustomWebChromeClient
+import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
+import com.authguidance.mobilewebview.plumbing.webview.AuthenticatorImpl
+import com.authguidance.mobilewebview.views.utilities.CustomWebChromeClient
 
 /*
  * The host fragment for the web view
@@ -34,9 +34,6 @@ class HostFragment : androidx.fragment.app.Fragment() {
 
         // Enable standard SPA HTML5 features to run in the web view
         this.binding.webview.settings.javaScriptEnabled = true
-
-        // Disable this later, once mobile authentication is working
-        // this.binding.webview.settings.domStorageEnabled = true
 
         // This makes window.mobileAuthenticator available to the SPA, so that it can call back the mobile app
         this.binding.webview.addJavascriptInterface(AuthenticatorImpl(), "mobileAuthenticator")

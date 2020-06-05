@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.views.webview
+package com.authguidance.mobilewebview.views.utilities
 
 import android.webkit.*
 
