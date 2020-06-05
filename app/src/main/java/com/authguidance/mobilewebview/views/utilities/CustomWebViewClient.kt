@@ -1,6 +1,10 @@
 package com.authguidance.mobilewebview.views.utilities
 
-import android.webkit.*
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
+
 
 /*
  * A custom web view client to load our SPA
@@ -27,7 +31,7 @@ class CustomWebViewClient : WebViewClient() {
         super.onReceivedError(view, request, error)
 
         if(error != null) {
-            println("GJA mobile: web view error: " + error.description)
+            println("GJA: CustomWebViewClient error: " + error.description)
         }
     }
 }

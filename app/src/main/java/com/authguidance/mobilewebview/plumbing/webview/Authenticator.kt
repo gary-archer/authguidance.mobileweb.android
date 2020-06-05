@@ -13,7 +13,7 @@ interface Authenticator {
 
     // Try to get an access token
     // suspend fun getAccessToken(): String
-    suspend fun getAccessToken(callbackName: String): String
+    fun getAccessToken(callbackName: String)
 
     // Try to refresh an access token
     // suspend fun refreshAccessToken(): String

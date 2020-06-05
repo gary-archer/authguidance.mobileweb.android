@@ -36,7 +36,8 @@ class HostFragment : androidx.fragment.app.Fragment() {
         this.binding.webview.settings.javaScriptEnabled = true
 
         // This makes window.mobileAuthenticator available to the SPA, so that it can call back the mobile app
-        this.binding.webview.addJavascriptInterface(AuthenticatorImpl(), "mobileAuthenticator")
+        val authenticator = AuthenticatorImpl(this.binding.webview)
+        this.binding.webview.addJavascriptInterface(authenticator, "mobileAuthenticator")
 
         // Customise clients to control debugging
         this.binding.webview.webViewClient = CustomWebViewClient()
@@ -44,5 +45,13 @@ class HostFragment : androidx.fragment.app.Fragment() {
 
         // Load our SPA's content, which will trigger calls back to the mobile app later
         this.binding.webview.loadUrl("https://web.mycompany.com/spa")
+    }
+
+    /*
+     * Clean up when destroyed
+     */
+    override fun onDestroyView() {
+        super.onDestroyView()
+        this.binding.webview.removeJavascriptInterface("mobileAuthenticator")
     }
 }
