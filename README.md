@@ -3,7 +3,7 @@
 ### Overview
 
 * An Android Sample using OAuth 2.0 and Open Id Connect, referenced in my blog at https://authguidance.com
-* **The goal of this sample is to integrate Secured Web Content into an Open Id Connect Secured Android App **
+* **The goal of this sample is to integrate Secured Web Content into an Open Id Connect Secured Android App**
 
 ### Details
 
