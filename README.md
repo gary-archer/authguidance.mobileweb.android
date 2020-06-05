@@ -1,4 +1,4 @@
-# authguidance.mobilesample.webview
+# authguidance.mobilewebview.android
 
 ### Overview
 
