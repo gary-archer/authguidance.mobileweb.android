@@ -31,7 +31,9 @@ android {
 
     // Enable newer data binding
     dataBinding {
-        enabled = true
+        buildFeatures {
+            dataBinding = true
+        }
     }
 }
 

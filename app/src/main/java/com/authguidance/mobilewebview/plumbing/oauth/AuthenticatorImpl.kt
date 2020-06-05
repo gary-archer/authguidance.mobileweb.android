@@ -5,15 +5,15 @@ import android.webkit.JavascriptInterface
 /*
  * The authenticator class called from Javascript
  */
-class SpaAuthenticator {
+class AuthenticatorImpl : Authenticator {
 
     /*
      * Get an access token
      */
     @JavascriptInterface
-    fun getAccessToken(info: String): String? {
+    override fun getAccessToken(input: String): String {
 
-        println("GJA: SPA Authenticator called: ${info}")
+        println("GJA: Mobile authenticator received input: ${input}")
         return "INVALIDTOKEN"
     }
 }

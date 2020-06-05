@@ -17,7 +17,7 @@
         <!-- Our single activity uses single top which prevents recreating it when it is on top of the stack
              This also prevents activity restarts when the orientation is changed -->
         <activity
-            android:name=".views.activities.MainActivity"
+            android:name=".app.MainActivity"
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name">

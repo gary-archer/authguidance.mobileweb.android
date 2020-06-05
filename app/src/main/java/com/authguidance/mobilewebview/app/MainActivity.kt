@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.views.activities;
+package com.authguidance.mobilewebview.app;
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

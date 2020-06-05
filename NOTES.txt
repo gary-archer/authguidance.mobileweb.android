@@ -1,8 +1,21 @@
-1. Create an SPA feature branch
-   Stub out a mobile authenticator in the SPA
-   Get SPA calls back to mobile side working
+SETUP
+-----
+1. Requires proxy to be running to see web.mycompany.com
 
-2. Load details from config
+2. console.log('GJA: ...') statements from SPA show up in logcat
 
-3. Get error handling working
-   Try to return an error object from mobile to the SPA
+3.
+
+NEXT STEPS
+----------
+1. Get SPA calls back to mobile side working with basic inputs and outputs
+   Understand async handling
+
+2. Stub out interfaces
+   WebViewAuthenticator to fit in with SPA coding model
+   Possibly use an internal class to fit in with mobile coding model
+   Get calls working with debug output
+
+3. Get startup / config working in the mobile app
+   Store any errors to return to the Web UI later
+   Get error handling working early
