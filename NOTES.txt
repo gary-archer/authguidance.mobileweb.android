@@ -1,18 +1,18 @@
 NEXT STEPS
 ----------
-1. Synchronise getAccessToken calls in the SPA code
-   Get API calls working and failing with a 401
-
-2. First login redirect steps
+1. First login redirect steps
    Plug in main authenticator class and aim to avoid changing it
 
-3. app signing is broken
-
-4. Claimed https scheme conflicts with main sample
+2. Claimed https scheme conflicts with main sample
    Is it possible to run 2 samples with same scheme?
    Developer setup means registration will fail
 
-5. Consider naming entry point interfaces 'bridge' rather than authenticator
+3. Consider naming entry point interfaces 'bridge' rather than authenticator
+
+4. app signing is broken
+   launch icon label should be shortened to 'Demo'
+
+5. Get full error remoting working
 
 CURRENT STATE
 -------------
