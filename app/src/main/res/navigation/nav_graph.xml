@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/hostFragment"
-        android:name="com.authguidance.mobilewebview.views.fragments.HostFragment"
+        android:name="com.authguidance.mobilewebview.views.main.HostFragment"
         android:label="Host"
         tools:layout="@layout/fragment_host">
     </fragment>

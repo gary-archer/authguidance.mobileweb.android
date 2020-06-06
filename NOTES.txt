@@ -21,6 +21,8 @@ NEXT STEPS
 
 4. Consider naming entry point interfaces 'bridge' rather than authenticator
 
+5. Get app signing working
+
 CURRENT STATE
 -------------
 Working on feature branch of Final SPA

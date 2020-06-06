@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".views.fragments.HostFragment">
+        tools:context=".views.main.HostFragment">
 
         <!-- The SPA is rendered in the web view and occupies the entire view -->
         <WebView

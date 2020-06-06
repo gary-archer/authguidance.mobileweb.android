@@ -1,9 +1,11 @@
-package com.authguidance.mobilewebview.views.fragments
+package com.authguidance.mobilewebview.views.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import com.authguidance.mobilewebview.app.MainActivitySharedViewModel
 import com.authguidance.mobilewebview.databinding.FragmentHostBinding
 import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
 import com.authguidance.mobilewebview.plumbing.webview.AuthenticatorImpl
@@ -44,7 +46,11 @@ class HostFragment : androidx.fragment.app.Fragment() {
         this.binding.webview.webChromeClient = CustomWebChromeClient()
 
         // Load our SPA's content, which will trigger calls back to the mobile app later
-        this.binding.webview.loadUrl("https://web.mycompany.com/spa")
+        val sharedViewModel: MainActivitySharedViewModel by activityViewModels()
+        val webRootUrl = sharedViewModel.configurationAccessor()!!.app.webBaseUrl
+
+        // Load our SPA's content, which will trigger calls back to the mobile app later
+        this.binding.webview.loadUrl(webRootUrl)
     }
 
     /*
