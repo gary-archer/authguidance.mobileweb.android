@@ -1,8 +1,5 @@
 package com.authguidance.mobilewebview.plumbing.webview
 
-import android.app.Activity
-import android.content.Intent
-
 /*
  * An interface to make authentication related operations explicit
  */

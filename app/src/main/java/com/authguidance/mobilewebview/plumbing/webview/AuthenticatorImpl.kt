@@ -45,13 +45,13 @@ class AuthenticatorImpl(private val webView: WebView) : Authenticator {
      * Return a success result to Javascript
      */
     private fun successResult(callbackName: String, data: String) {
-        webView.loadUrl("javascript: window['${callbackName}']('${data}', null)")
+        webView.loadUrl("javascript: window['$callbackName']('$data', null)")
     }
 
     /*
      * Return an error result to Javascript
      */
     private fun errorResult(callbackName: String, error: String) {
-        webView.loadUrl("javascript: window['${callbackName}'](null, '${error}')")
+        webView.loadUrl("javascript: window['$callbackName'](null, '$error')")
     }
 }

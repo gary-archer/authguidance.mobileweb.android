@@ -1,7 +1,7 @@
-package com.authguidance.mobilewebview.app;
+package com.authguidance.mobilewebview.app
 
 import android.content.Context
-import com.authguidance.mobilewebview.configuration.Configuration;
+import com.authguidance.mobilewebview.configuration.Configuration
 import com.authguidance.mobilewebview.configuration.ConfigurationLoader
 import com.authguidance.mobilewebview.views.utilities.DeviceSecurity
 

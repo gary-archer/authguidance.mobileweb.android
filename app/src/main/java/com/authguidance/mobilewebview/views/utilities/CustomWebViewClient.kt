@@ -5,7 +5,6 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-
 /*
  * A custom web view client to load our SPA
  */
@@ -26,11 +25,12 @@ class CustomWebViewClient : WebViewClient() {
     override fun onReceivedError(
         view: WebView?,
         request: WebResourceRequest?,
-        error: WebResourceError?) {
+        error: WebResourceError?
+    ) {
 
         super.onReceivedError(view, request, error)
 
-        if(error != null) {
+        if (error != null) {
             println("GJA: CustomWebViewClient error: " + error.description)
         }
     }

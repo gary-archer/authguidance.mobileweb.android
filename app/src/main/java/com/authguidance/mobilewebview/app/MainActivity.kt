@@ -1,10 +1,10 @@
-package com.authguidance.mobilewebview.app;
+package com.authguidance.mobilewebview.app
 
 import android.app.admin.DevicePolicyManager
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.ActivityMainBinding
@@ -72,8 +72,7 @@ class MainActivity : AppCompatActivity() {
         } catch (ex: Throwable) {
 
             // Store the error to display later
-            println("GJA: startup exception")
-            println(ex.message ?: "")
+            println("GJA: startup exception: ${ex.message}")
             this.binding.model!!.exception = ex
         }
     }

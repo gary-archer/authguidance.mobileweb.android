@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.authguidance.mobilewebview.app.MainActivitySharedViewModel
 import com.authguidance.mobilewebview.databinding.FragmentHostBinding
-import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
 import com.authguidance.mobilewebview.plumbing.webview.AuthenticatorImpl
 import com.authguidance.mobilewebview.views.utilities.CustomWebChromeClient
+import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
 
 /*
  * The host fragment for the web view
@@ -21,8 +21,11 @@ class HostFragment : androidx.fragment.app.Fragment() {
     /*
      * Inflate the view
      */
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         this.binding = FragmentHostBinding.inflate(inflater, container, false)
         return this.binding.root
