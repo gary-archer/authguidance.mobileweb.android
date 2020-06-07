@@ -1,33 +1,33 @@
 NEXT STEPS
 ----------
-1. Receive claimed https scheme response
-   Add app signing for webview mobile app via KeyStore Explorer
-   Update interstitial page to return to different locations based on client id perhaps
-   Try updating the assetlinks.json file without breaking old sample
-   Is it possible to run 2 samples with same scheme?
+1. Get basic functionality completed
+   After login completion reload data
+   After logout completion move to login required
+   Verify tablet case looks OK and add styles for this resolution if needed
 
-2. Startup Reliability
+2. Get Okta working equivalently
+   Add a new trust entry
+
+3. UX
+   Show ExpireRefreshToken button in SPA for mobile case
+
+4. Startup Reliability
    Show startup errors in the SPA
    Pressing Home should retry loading the mobile configuration
 
-3. Async Reliability
+5. Async Reliability
    Do a pause for 10 seconds in Kotlin during reload
    Check that UI thread is not tied up and is still responsive
 
-4. ReEntrancy
+6. ReEntrancy
    Multiple redirects at once when Home is clicked multiple times from LoginRequired
    Fix for main mobile apps if required
 
-5. UX
-   Get running on tablet looking OK
-   Do I need styles for this resolution?
-   Show ExpireRefreshToken button in SPA for mobile case
+7. Design
+   Think more about webDomain v interstitialDomain naming
+   Should be able to debug SPA code without impacting custom scheme registration
 
-6. Design
-   Think more about webDomain v interstitialDomain
-   Get rid of SPA host serving interstitial page?
-
-7. Blog write up
+8. Blog write up
    Update screenshots to Android 4 for mobile setup / AppAuth sample
 
 SETUP NOTES

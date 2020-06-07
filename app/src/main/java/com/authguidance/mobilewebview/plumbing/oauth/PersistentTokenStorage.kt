@@ -11,7 +11,7 @@ import com.google.gson.Gson
 class PersistentTokenStorage(val context: Context, val encryptionManager: EncryptionManager) {
 
     private var tokenData: TokenData? = null
-    private val applicationName = "com.authguidance.basicmobileapp"
+    private val applicationName = "com.authguidance.mobilewebview"
     private val key = "AUTH_STATE"
     private val sharedPrefs = context.getSharedPreferences(applicationName, MODE_PRIVATE)
 

@@ -4,10 +4,10 @@
   },
   "oauth": {
     "authority":              "https://dev-843469.oktapreview.com/oauth2/default",
-    "clientId":               "0oangdi29uheQ83wQ0h7",
+    "clientId":               "XXX",
     "webDomain":              "web.mycompany.com",
-    "loginRedirectPath":      "/android/postlogin.html",
-    "postLogoutRedirectPath": "/android/postlogout.html",
+    "loginRedirectPath":      "/android/postlogin-webview.html",
+    "postLogoutRedirectPath": "/android/postlogout-webview.html",
     "deepLinkDomain":         "authguidance-examples.com",
     "loginActivatePath":      "/webview/callback",
     "postLogoutActivatePath": "/webview/logoutcallback",
