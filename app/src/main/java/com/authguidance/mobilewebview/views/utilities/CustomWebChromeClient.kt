@@ -14,7 +14,7 @@ class CustomWebChromeClient : WebChromeClient() {
     @Override
     override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
 
-        println("GJA: ${consoleMessage?.message()}")
+        println("MobileDebug: ${consoleMessage?.message()}")
         return super.onConsoleMessage(consoleMessage)
     }
 }

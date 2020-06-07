@@ -1,23 +1,25 @@
 NEXT STEPS
 ----------
-1. First login redirect steps
-   Plug in main authenticator class and aim to avoid changing it
+1. Receive proper error objects from mobile
+   Handle login cancellation case first
+   Manage serialization and deserialization on the SPA side
+   Handle startup errors, login cancelled errors and AppAuth errors
+   Maybe have a getStartupError mobile method that the SPA calls
 
-2. Claimed https scheme conflicts with main sample
+2. Receive claimed https scheme response
+   Fix app signing
+   Try updating the assetlinks.json file and the Android manifest file
    Is it possible to run 2 samples with same scheme?
-   Developer setup means registration will fail
+   Workaround development proxy setup where registration fails
 
-3. Consider naming entry point interfaces 'bridge' rather than authenticator
+3. Async Reliability
+   Do a pause for 10 seconds in Kotlin during reload
+   Check that UI thread is not tied up and is still responsive
 
-4. app signing is broken
-   launch icon label should be shortened to 'Demo'
-
-5. Get full error remoting working
-
-CURRENT STATE
--------------
-Working on feature branch of Final SPA
-Working on Android mobile web view side by side
+4. UX
+   Styles for tablet and test under this resolution
+   Show ExpireRefreshToken button in SPA for mobile case
+   isLoggedIn state to update in webViewAuthenticator
 
 SETUP NOTES
 -----------

@@ -29,9 +29,8 @@ class CustomWebViewClient : WebViewClient() {
     ) {
 
         super.onReceivedError(view, request, error)
-
         if (error != null) {
-            println("GJA: CustomWebViewClient error: " + error.description)
+            println("MobileDebug: CustomWebViewClient error: " + error.description)
         }
     }
 }

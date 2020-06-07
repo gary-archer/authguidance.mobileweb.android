@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/hostFragment"
-        android:name="com.authguidance.mobilewebview.views.main.HostFragment"
+        android:name="com.authguidance.mobilewebview.views.main.MainFragment"
         android:label="Host"
-        tools:layout="@layout/fragment_host">
+        tools:layout="@layout/fragment_main">
     </fragment>
 </navigation>

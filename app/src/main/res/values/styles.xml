@@ -12,29 +12,10 @@
         <item name="android:navigationBarColor">@color/primary_dark</item>
     </style>
 
-    <!-- The style for header text -->
-    <style name="TextViewHeaderStyle" parent="android:Widget.TextView">
+    <!-- The style for the login required view's header text -->
+    <style name="LoginRequiredHeaderStyle" parent="android:Widget.TextView">
         <item name="android:textColor">@color/text_value</item>
         <item name="android:textSize">18sp</item>
-    </style>
-
-    <!-- The style for value text -->
-    <style name="TextViewValueStyle" parent="android:Widget.TextView">
-        <item name="android:textColor">@color/text_value</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:layout_gravity">left</item>
-    </style>
-
-    <!-- Button style for the Open System Settings button -->
-    <style name="ButtonSecureDeviceStyle" parent="android:Widget.Button">
-        <item name="android:layout_width">200dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:layout_marginRight">2dp</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:backgroundTint">@color/text_pale_green</item>
     </style>
 
 </resources>
