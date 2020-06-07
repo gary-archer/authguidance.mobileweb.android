@@ -30,7 +30,7 @@ class JavascriptBridgeImpl(
     private var redirectInProgress: Boolean = false
 
     /*
-     * Register this class with the events system
+     * Register with the events system
      */
     init {
         EventBus.getDefault().register(this)
@@ -52,8 +52,7 @@ class JavascriptBridgeImpl(
             } catch (ex: Throwable) {
 
                 // Call back the SPA with an error response
-                val errorText = ex.message ?: ""
-                that.errorResult(callbackName, errorText)
+                that.errorResult(callbackName, ex)
             }
         }
     }
@@ -79,9 +78,8 @@ class JavascriptBridgeImpl(
             } catch (ex: Throwable) {
 
                 // Call back the SPA with an error response
-                val errorText = ex.message ?: ""
                 withContext(Dispatchers.Main) {
-                    that.errorResult(callbackName, errorText)
+                    that.errorResult(callbackName, ex)
                 }
             }
         }
@@ -108,9 +106,8 @@ class JavascriptBridgeImpl(
             } catch (ex: Throwable) {
 
                 // Call back the SPA with an error response
-                val errorText = ex.message ?: ""
                 withContext(Dispatchers.Main) {
-                    that.errorResult(callbackName, errorText)
+                    that.errorResult(callbackName, ex)
                 }
             }
         }
@@ -137,8 +134,7 @@ class JavascriptBridgeImpl(
 
                 // Report errors such as those looking up endpoints
                 that.redirectInProgress = false
-                val errorText = ex.message ?: ""
-                that.errorResult(callbackName, errorText)
+                that.errorResult(callbackName, ex)
             }
         }
     }
@@ -156,10 +152,10 @@ class JavascriptBridgeImpl(
 
         // Notify the SPA and return an error if applicable
         this.redirectInProgress = false
-        if (event.error.isBlank()) {
+        if (event.exception == null) {
             this.successResult(this.loginCallbackName, "")
         } else {
-            this.errorResult(this.loginCallbackName, event.error)
+            this.errorResult(this.loginCallbackName, event.exception)
         }
     }
 
@@ -184,8 +180,7 @@ class JavascriptBridgeImpl(
 
                 // Report errors such as those looking up endpoints
                 that.redirectInProgress = false
-                val errorText = ex.message ?: ""
-                that.errorResult(callbackName, errorText)
+                that.errorResult(callbackName, ex)
             }
         }
     }
@@ -224,9 +219,8 @@ class JavascriptBridgeImpl(
             } catch (ex: Throwable) {
 
                 // Call back the SPA with an error response
-                val errorText = ex.message ?: ""
                 withContext(Dispatchers.Main) {
-                    that.errorResult(callbackName, errorText)
+                    that.errorResult(callbackName, ex)
                 }
             }
         }
@@ -249,25 +243,26 @@ class JavascriptBridgeImpl(
             } catch (ex: Throwable) {
 
                 // Call back the SPA with an error response
-                val errorText = ex.message ?: ""
                 withContext(Dispatchers.Main) {
-                    that.errorResult(callbackName, errorText)
+                    that.errorResult(callbackName, ex)
                 }
             }
         }
     }
 
     /*
-     * Return a success result to Javascript
+     * Return a success result back to the SPA
      */
     private fun successResult(callbackName: String, data: String) {
         webView.loadUrl("javascript: window['$callbackName']('$data', null)")
     }
 
     /*
-     * Return an error result to Javascript
+     * Pass an error result back to the SPA as a JSON object
      */
-    private fun errorResult(callbackName: String, error: String) {
-        webView.loadUrl("javascript: window['$callbackName'](null, '$error')")
+    private fun errorResult(callbackName: String, ex: Throwable) {
+
+        val errorJson = ErrorHandler().fromException(ex).toJson()
+        webView.loadUrl("javascript: window['$callbackName'](null, '$errorJson')")
     }
 }

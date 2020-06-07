@@ -110,16 +110,12 @@ class MainActivity : AppCompatActivity() {
                 that.binding.model!!.authenticator!!.finishLogin(responseIntent)
 
                 // Raise a successful completion event
-                EventBus.getDefault().post(LoginCompletedEvent(error = ""))
+                EventBus.getDefault().post(LoginCompletedEvent(null))
 
             } catch (ex: Throwable) {
 
-                // Report errors
-                val errorText = ex.message ?: ""
-                println("MobileDebug: finishLogin error: $errorText")
-
                 // Raise a failed completion event
-                EventBus.getDefault().post(LoginCompletedEvent(error = errorText))
+                EventBus.getDefault().post(LoginCompletedEvent(ex))
             }
         }
     }

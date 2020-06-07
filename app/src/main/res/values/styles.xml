@@ -12,10 +12,4 @@
         <item name="android:navigationBarColor">@color/primary_dark</item>
     </style>
 
-    <!-- The style for the login required view's header text -->
-    <style name="LoginRequiredHeaderStyle" parent="android:Widget.TextView">
-        <item name="android:textColor">@color/text_value</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
 </resources>

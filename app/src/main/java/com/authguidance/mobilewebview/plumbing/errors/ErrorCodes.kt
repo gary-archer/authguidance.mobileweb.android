@@ -5,6 +5,9 @@ package com.authguidance.mobilewebview.plumbing.errors
  */
 object ErrorCodes {
 
+    // A general exception in the UI
+    const val generalUIError = "mobile_ui_error"
+
     // Used to indicate that the API cannot be called until the user logs in
     const val loginRequired = "login_required"
 

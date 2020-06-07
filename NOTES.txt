@@ -1,25 +1,33 @@
 NEXT STEPS
 ----------
-1. Receive proper error objects from mobile
-   Handle login cancellation case first
-   Manage serialization and deserialization on the SPA side
-   Handle startup errors, login cancelled errors and AppAuth errors
-   Maybe have a getStartupError mobile method that the SPA calls
+0. Move mainActivity processing to view model
+   Handle startup errors via a bridge method
+   isLoggedIn state to update in webViewAuthenticator
 
-2. Receive claimed https scheme response
+1. Receive claimed https scheme response
    Fix app signing
    Try updating the assetlinks.json file and the Android manifest file
    Is it possible to run 2 samples with same scheme?
    Workaround development proxy setup where registration fails
 
-3. Async Reliability
+2. Async Reliability
    Do a pause for 10 seconds in Kotlin during reload
    Check that UI thread is not tied up and is still responsive
+
+3. ReEntrancy
+   Multiple redirects at once when Home is clicked multiple times from LoginRequired
+   Fix for main mobile apps if required
 
 4. UX
    Styles for tablet and test under this resolution
    Show ExpireRefreshToken button in SPA for mobile case
-   isLoggedIn state to update in webViewAuthenticator
+
+5. Design
+   Think more about webDomain v interstitialDomain
+   Get rid of SPA host serving interstitial page?
+
+6. Blog write up
+   Update screenshots to Android 4 for mobile setup / AppAuth sample
 
 SETUP NOTES
 -----------

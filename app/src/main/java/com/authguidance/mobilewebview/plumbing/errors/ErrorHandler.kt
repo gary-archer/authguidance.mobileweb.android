@@ -8,6 +8,26 @@ import net.openid.appauth.AuthorizationException
 class ErrorHandler {
 
     /*
+     * Return an error object from an exception
+     */
+    fun fromException(ex: Throwable): UIError {
+
+        // Already handled
+        if (ex is UIError) {
+            return ex
+        }
+
+        val error = UIError(
+            "Mobile UI",
+            ErrorCodes.generalUIError,
+            "A technical problem was encountered in the Mobile UI"
+        )
+
+        this.updateFromException(ex, error)
+        return error
+    }
+
+    /*
      * Return an error to short circuit execution
      */
     fun fromLoginRequired(): UIError {
