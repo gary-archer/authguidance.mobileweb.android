@@ -6,7 +6,7 @@ NEXT STEPS
    Verify tablet case looks OK and add styles for this resolution if needed
 
 2. Get Okta working equivalently
-   Add a new trust entry
+   Add a new trust entry and get configuration file working
 
 3. UX
    Show ExpireRefreshToken button in SPA for mobile case
@@ -29,6 +29,7 @@ NEXT STEPS
 
 8. Blog write up
    Update screenshots to Android 4 for mobile setup / AppAuth sample
+   Important point will be running mobile code locally + running SPA code locally
 
 SETUP NOTES
 -----------
