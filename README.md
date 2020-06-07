@@ -7,8 +7,7 @@
 
 ### Details
 
-* See the **WebView Code Sample Overview** for a summary of behaviour
-* See the **WebView Code Sample Instructions** for details on how to run the code
+* See the **WebView Code Sample Overview** for an overview and how to run the code
 
 ### Technologies
 
