@@ -1,10 +1,10 @@
 {
   "app": {
-    "webBaseUrl":             "https://web.mycompany.com/spa"
+    "webBaseUrl":             "https://web.authguidance-examples.com/spa"
   },
   "oauth": {
     "authority":              "https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_mZ3NBYpTo",
-    "clientId":               "3tajc2adp5t39pj4c9gudbiook",
+    "clientId":               "7mjn7nveeqsdr52r8r7nv5mt2",
     "webDomain":              "web.authguidance-examples.com",
     "loginRedirectPath":      "/mobile/postlogin.html",
     "postLogoutRedirectPath": "/mobile/postlogout.html",

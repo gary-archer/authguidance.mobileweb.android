@@ -1,38 +1,36 @@
 NEXT STEPS
 ----------
-0. Move mainActivity processing to view model
-   Handle startup errors via a bridge method
-   isLoggedIn state to update in webViewAuthenticator
-
 1. Receive claimed https scheme response
-   Fix app signing
-   Try updating the assetlinks.json file and the Android manifest file
+   Add app signing for webview mobile app via KeyStore Explorer
+   Update interstitial page to return to different locations based on client id perhaps
+   Try updating the assetlinks.json file without breaking old sample
    Is it possible to run 2 samples with same scheme?
-   Workaround development proxy setup where registration fails
 
-2. Async Reliability
+2. Startup Reliability
+   Show startup errors in the SPA
+   Pressing Home should retry loading the mobile configuration
+
+3. Async Reliability
    Do a pause for 10 seconds in Kotlin during reload
    Check that UI thread is not tied up and is still responsive
 
-3. ReEntrancy
+4. ReEntrancy
    Multiple redirects at once when Home is clicked multiple times from LoginRequired
    Fix for main mobile apps if required
 
-4. UX
-   Styles for tablet and test under this resolution
+5. UX
+   Get running on tablet looking OK
+   Do I need styles for this resolution?
    Show ExpireRefreshToken button in SPA for mobile case
 
-5. Design
+6. Design
    Think more about webDomain v interstitialDomain
    Get rid of SPA host serving interstitial page?
 
-6. Blog write up
+7. Blog write up
    Update screenshots to Android 4 for mobile setup / AppAuth sample
 
 SETUP NOTES
 -----------
 1. Requires proxy to be running to see web.mycompany.com
-
-2. console.log('GJA: ...') statements from SPA show up in logcat
-
-3. @JavascriptInterface makes mobileAuthenticator methods available to SPA
+   OK for initial development but running without a proxy is preferred

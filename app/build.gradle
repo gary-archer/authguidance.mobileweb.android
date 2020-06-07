@@ -43,7 +43,7 @@ android {
     // Sign both debug and release builds
     buildTypes {
         debug {
-            // signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
             debuggable true
         }
         release {
