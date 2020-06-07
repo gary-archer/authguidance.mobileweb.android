@@ -1,7 +1,7 @@
 package com.authguidance.mobilewebview.plumbing.webview
 
 /*
- * OAuth related entry points called from Javascript within a web view
+ * Mobile entry points called by the SPA
  */
 interface JavascriptBridge {
 

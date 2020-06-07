@@ -17,7 +17,7 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 /*
- * The authenticator class has methods called from Javascript in an SPA
+ * Mobile entry points called from Javascript in our SPA
  */
 class JavascriptBridgeImpl(
     private val webView: WebView,
