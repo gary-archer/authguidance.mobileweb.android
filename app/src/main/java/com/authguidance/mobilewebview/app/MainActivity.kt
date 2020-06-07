@@ -7,13 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.ActivityMainBinding
-import com.authguidance.mobilewebview.plumbing.events.LoginCompletedEvent
-import com.authguidance.mobilewebview.plumbing.events.LogoutCompletedEvent
 import com.authguidance.mobilewebview.views.utilities.Constants
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import org.greenrobot.eventbus.EventBus
 
 /*
  * Our Single Activity App's activity
@@ -39,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         this.binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         this.binding.model = model
 
-        // Finally, do the main application load
+        // Run the application startup logic, to load configuration
         this.initialiseApp()
     }
 
@@ -61,16 +55,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun initialiseApp() {
 
-        try {
-            // Do the main view model initialisation
-            this.binding.model!!.initialise(this.applicationContext)
-
-        } catch (ex: Throwable) {
-
-            // Store the error to display later
-            println("MobileDebug: startup exception: ${ex.message}")
-            this.binding.model!!.exception = ex
-        }
+        this.binding.model!!.initialise(this.applicationContext)
     }
 
     /*
@@ -82,53 +67,12 @@ class MainActivity : AppCompatActivity() {
 
         // Handle login responses
         if (requestCode == Constants.LOGIN_REDIRECT_REQUEST_CODE) {
-            this.onFinishLogin(data)
+            this.binding.model!!.onFinishLogin(data)
         }
 
         // Handle logout responses and reset state
         else if (requestCode == Constants.LOGOUT_REDIRECT_REQUEST_CODE) {
-            this.onFinishLogout()
+            this.binding.model!!.onFinishLogout()
         }
-    }
-
-    /*
-     * Complete login processing
-     */
-    private fun onFinishLogin(responseIntent: Intent?) {
-
-        if (responseIntent == null) {
-            return
-        }
-
-        // Switch to a background thread to perform the code exchange
-        CoroutineScope(Dispatchers.IO).launch {
-
-            val that = this@MainActivity
-            try {
-
-                // Exchange the authorization code for tokens
-                that.binding.model!!.authenticator!!.finishLogin(responseIntent)
-
-                // Raise a successful completion event
-                EventBus.getDefault().post(LoginCompletedEvent(null))
-
-            } catch (ex: Throwable) {
-
-                // Raise a failed completion event
-                EventBus.getDefault().post(LoginCompletedEvent(ex))
-            }
-        }
-    }
-
-    /*
-     * Complete logout processing
-     */
-    private fun onFinishLogout() {
-
-        // Complete OAuth processing
-        this.binding.model!!.authenticator!!.finishLogout()
-
-        // Raise a completion event
-        EventBus.getDefault().post(LogoutCompletedEvent())
     }
 }
