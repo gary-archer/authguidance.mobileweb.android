@@ -3,33 +3,29 @@ NEXT STEPS
 1. Get Okta working equivalently
    Add a new trust entry and get configuration file working
 
-2. UX
-   Verify tablet case looks OK and add styles for this resolution if needed
-   Show ExpireRefreshToken button in SPA for mobile case
-
-3. OAuth Failure Scenarios and UI
-   Test refresh token expired etc
+2. OAuth Failure Scenarios and UI Display
+   Show ExpireRefreshToken button in SPA for mobile case an test
    Improve stack trace display based on authenticator being used
 
-4. Startup Reliability
+3. Startup Reliability
    Show mobile startup errors in the SPA
    Pressing Home should retry loading the mobile configuration
 
-5. Async Reliability
+4. Async Reliability
    Do a pause for 10 seconds in Kotlin during reload
    Check that UI thread is not tied up and is still responsive
 
-6. ReEntrancy
+5. ReEntrancy
    Multiple redirects at once when Home is clicked multiple times from LoginRequired
    Fix for main mobile apps if required
    Can I improve performance, which feels sluggish?
 
-7. Design
+6. Design
    Think more about webDomain v interstitialDomain naming
    Should be able to debug SPA code without impacting custom scheme registration
    Do this as a unit where I also update blog posts + Android / iOS samples
 
-8. Blog write up
+7. Blog write up
    Update screenshots to Android 4 for mobile setup / AppAuth sample
    Important point will be running mobile code locally + running SPA code locally
 
@@ -37,3 +33,5 @@ SETUP NOTES
 -----------
 1. Requires proxy to be running to see web.mycompany.com
    OK for initial development but running without a proxy is preferred
+
+2. SPA development is tricky and work best with deployed SPA
