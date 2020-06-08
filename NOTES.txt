@@ -1,18 +1,18 @@
 NEXT STEPS
 ----------
-1. Get basic functionality completed
-   After login completion reload data
-   After logout completion move to login required
-   Verify tablet case looks OK and add styles for this resolution if needed
-
-2. Get Okta working equivalently
+1. Get Okta working equivalently
    Add a new trust entry and get configuration file working
 
-3. UX
+2. UX
+   Verify tablet case looks OK and add styles for this resolution if needed
    Show ExpireRefreshToken button in SPA for mobile case
 
+3. OAuth Failure Scenarios and UI
+   Test refresh token expired etc
+   Improve stack trace display based on authenticator being used
+
 4. Startup Reliability
-   Show startup errors in the SPA
+   Show mobile startup errors in the SPA
    Pressing Home should retry loading the mobile configuration
 
 5. Async Reliability
@@ -22,10 +22,12 @@ NEXT STEPS
 6. ReEntrancy
    Multiple redirects at once when Home is clicked multiple times from LoginRequired
    Fix for main mobile apps if required
+   Can I improve performance, which feels sluggish?
 
 7. Design
    Think more about webDomain v interstitialDomain naming
    Should be able to debug SPA code without impacting custom scheme registration
+   Do this as a unit where I also update blog posts + Android / iOS samples
 
 8. Blog write up
    Update screenshots to Android 4 for mobile setup / AppAuth sample
