@@ -9,8 +9,8 @@ import java.util.Locale
  * An error entity for the UI
  */
 class UIError(
-    private var area: String,
-    private val errorCode: String,
+    var area: String,
+    val errorCode: String,
     userMessage: String
 ) : RuntimeException(userMessage) {
 

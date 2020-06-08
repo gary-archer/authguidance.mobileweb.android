@@ -8,6 +8,21 @@ import net.openid.appauth.AuthorizationException
 class ErrorHandler {
 
     /*
+     * Return an error object starting the mobile app
+     */
+    fun fromStartupError(ex: Throwable): UIError {
+
+        val error = UIError(
+            "Startup",
+            ErrorCodes.generalUIError,
+            "A problem was encountered starting the mobile app"
+        )
+
+        this.updateFromException(ex, error)
+        return error
+    }
+
+    /*
      * Return an error object from an exception
      */
     fun fromException(ex: Throwable): UIError {

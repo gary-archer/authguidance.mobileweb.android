@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.ActivityMainBinding
+import com.authguidance.mobilewebview.plumbing.errors.ErrorConsoleReporter
+import com.authguidance.mobilewebview.plumbing.errors.ErrorHandler
+import com.authguidance.mobilewebview.plumbing.errors.UIError
 import com.authguidance.mobilewebview.views.utilities.Constants
 
 /*
@@ -51,11 +54,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     /*
-     * Initialise the app and handle errors
+     * Try to initialise the app
      */
     private fun initialiseApp() {
 
-        this.binding.model!!.initialise(this.applicationContext)
+        try {
+            // Load configuration and create global objects
+            this.binding.model!!.initialise(this.applicationContext)
+
+        } catch (ex: Throwable) {
+
+            // Report any startup errors
+            val error = ErrorHandler().fromStartupError(ex)
+            this.handleError(error)
+        }
     }
 
     /*
@@ -74,5 +86,12 @@ class MainActivity : AppCompatActivity() {
         else if (requestCode == Constants.LOGOUT_REDIRECT_REQUEST_CODE) {
             this.binding.model!!.onFinishLogout()
         }
+    }
+
+    /*
+     * For this sample we will simplify and just use console output of errors
+     */
+    private fun handleError(error: UIError) {
+        ErrorConsoleReporter.output(error, this)
     }
 }

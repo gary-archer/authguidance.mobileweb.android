@@ -40,20 +40,24 @@ class MainFragment : androidx.fragment.app.Fragment() {
 
         // Get the shared view model supplied by the main activity
         val sharedViewModel: MainActivitySharedViewModel by activityViewModels()
-        val authenticator = sharedViewModel.authenticatorAccessor()!!
-        val webRootUrl = sharedViewModel.configurationAccessor()!!.app.webBaseUrl
+        val configuration = sharedViewModel.configurationAccessor()
+        val authenticator = sharedViewModel.authenticatorAccessor()
+        if (configuration != null && authenticator != null) {
 
-        // Make a mobile bridge available to the SPA
-        val bridge = JavascriptBridgeImpl(this.binding.webview, authenticator, this.context as Activity)
-        this.binding.webview.addJavascriptInterface(bridge, "mobileBridge")
+            val webRootUrl = configuration.app.webBaseUrl
 
-        // Set web view properties to enable interop and debugging
-        this.binding.webview.settings.javaScriptEnabled = true
-        this.binding.webview.webViewClient = CustomWebViewClient()
-        this.binding.webview.webChromeClient = CustomWebChromeClient()
+            // Make a mobile bridge available to the SPA
+            val bridge = JavascriptBridgeImpl(this.binding.webview, authenticator, this.context as Activity)
+            this.binding.webview.addJavascriptInterface(bridge, "mobileBridge")
 
-        // Load our SPA's content, which will trigger OAuth calls back to the mobile app later
-        this.binding.webview.loadUrl(webRootUrl)
+            // Set web view properties to enable interop and debugging
+            this.binding.webview.settings.javaScriptEnabled = true
+            this.binding.webview.webViewClient = CustomWebViewClient()
+            this.binding.webview.webChromeClient = CustomWebChromeClient()
+
+            // Load our SPA's content, which will trigger OAuth calls back to the mobile app later
+            this.binding.webview.loadUrl(webRootUrl)
+        }
     }
 
     /*

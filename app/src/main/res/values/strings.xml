@@ -1,3 +1,10 @@
 <resources>
     <string name="launch_icon_name">Demo</string>
+
+    <string name="error_user_message">User Message</string>
+    <string name="error_area">Area</string>
+    <string name="error_code">Error Code</string>
+    <string name="error_utc_time">UTC Time</string>
+    <string name="error_details">Details</string>
+    <string name="error_stack">Stack</string>
 </resources>

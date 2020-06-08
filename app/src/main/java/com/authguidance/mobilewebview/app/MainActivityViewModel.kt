@@ -22,7 +22,6 @@ public class MainActivityViewModel {
     var authenticator: AuthenticatorImpl? = null
 
     // Initialisation state
-    private var startupError: Throwable? = null
     var isInitialised: Boolean = false
 
     /*
@@ -30,23 +29,15 @@ public class MainActivityViewModel {
      */
     fun initialise(context: Context) {
 
-        try {
-            // Reset state
-            this.isInitialised = false
-            this.startupError = null
+        // Reset state
+        this.isInitialised = false
 
-            // Create the authenticator object
-            this.configuration = ConfigurationLoader().load(context)
-            this.authenticator = AuthenticatorImpl(this.configuration!!.oauth, context)
+        // Create the authenticator object
+        this.configuration = ConfigurationLoader().load(context)
+        this.authenticator = AuthenticatorImpl(this.configuration!!.oauth, context)
 
-            // Indicate successful startup
-            this.isInitialised = true
-
-        } catch (ex: Throwable) {
-
-            // Store the error
-            this.startupError = ex
-        }
+        // Indicate successful startup
+        this.isInitialised = true
     }
 
     /*
