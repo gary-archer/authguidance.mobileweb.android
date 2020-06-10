@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.plumbing.webview
+package com.authguidance.mobilewebview.plumbing.interop
 
 import android.app.Activity
 import android.webkit.JavascriptInterface

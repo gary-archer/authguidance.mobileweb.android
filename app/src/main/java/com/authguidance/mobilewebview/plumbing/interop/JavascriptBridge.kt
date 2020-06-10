@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.plumbing.webview
+package com.authguidance.mobilewebview.plumbing.interop
 
 /*
  * Mobile entry points called by the SPA

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.authguidance.mobilewebview.app.MainActivitySharedViewModel
 import com.authguidance.mobilewebview.databinding.FragmentMainBinding
-import com.authguidance.mobilewebview.plumbing.webview.JavascriptBridgeImpl
+import com.authguidance.mobilewebview.plumbing.interop.JavascriptBridgeImpl
 import com.authguidance.mobilewebview.views.utilities.CustomWebChromeClient
 import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
 
