@@ -9,8 +9,8 @@ import androidx.fragment.app.activityViewModels
 import com.authguidance.mobilewebview.app.MainActivitySharedViewModel
 import com.authguidance.mobilewebview.databinding.FragmentMainBinding
 import com.authguidance.mobilewebview.plumbing.interop.JavascriptBridgeImpl
-import com.authguidance.mobilewebview.views.utilities.CustomWebChromeClient
-import com.authguidance.mobilewebview.views.utilities.CustomWebViewClient
+import com.authguidance.mobilewebview.plumbing.interop.CustomWebChromeClient
+import com.authguidance.mobilewebview.plumbing.interop.CustomWebViewClient
 
 /*
  * The host fragment for the web view
@@ -52,8 +52,10 @@ class MainFragment : androidx.fragment.app.Fragment() {
 
             // Set web view properties to enable interop and debugging
             this.binding.webview.settings.javaScriptEnabled = true
-            this.binding.webview.webViewClient = CustomWebViewClient()
-            this.binding.webview.webChromeClient = CustomWebChromeClient()
+            this.binding.webview.webViewClient =
+                CustomWebViewClient()
+            this.binding.webview.webChromeClient =
+                CustomWebChromeClient()
 
             // Load our SPA's content, which will trigger OAuth calls back to the mobile app later
             this.binding.webview.loadUrl(webRootUrl)

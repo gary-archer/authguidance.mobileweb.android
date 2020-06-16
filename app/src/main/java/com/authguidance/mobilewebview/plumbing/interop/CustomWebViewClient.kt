@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.views.utilities
+package com.authguidance.mobilewebview.plumbing.interop
 
 import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
