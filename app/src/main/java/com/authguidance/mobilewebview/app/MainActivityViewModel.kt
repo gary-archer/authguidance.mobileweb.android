@@ -21,23 +21,12 @@ public class MainActivityViewModel {
     var configuration: Configuration? = null
     var authenticator: AuthenticatorImpl? = null
 
-    // Initialisation state
-    var isInitialised: Boolean = false
-
     /*
      * Load configuration and create global objects
      */
     fun initialise(context: Context) {
-
-        // Reset state
-        this.isInitialised = false
-
-        // Create the authenticator object
         this.configuration = ConfigurationLoader().load(context)
         this.authenticator = AuthenticatorImpl(this.configuration!!.oauth, context)
-
-        // Indicate successful startup
-        this.isInitialised = true
     }
 
     /*
