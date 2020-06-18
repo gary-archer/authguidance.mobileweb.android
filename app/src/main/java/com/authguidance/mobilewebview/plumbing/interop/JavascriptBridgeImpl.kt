@@ -117,7 +117,7 @@ class JavascriptBridgeImpl(
      * Handle SPA requests to trigger a login redirect
      */
     @JavascriptInterface
-    override fun startLogin(callbackName: String) {
+    override fun login(callbackName: String) {
 
         // Run on the UI thread since we present UI elements
         this.loginCallbackName = callbackName
@@ -163,7 +163,7 @@ class JavascriptBridgeImpl(
      * Handle SPA requests to trigger a logout redirect
      */
     @JavascriptInterface
-    override fun startLogout(callbackName: String) {
+    override fun logout(callbackName: String) {
 
         // Run on the UI thread since we present UI elements
         this.logoutCallbackName = callbackName

@@ -15,10 +15,10 @@ interface JavascriptBridge {
     fun refreshAccessToken(callbackName: String)
 
     // Perform a login redirect
-    fun startLogin(callbackName: String)
+    fun login(callbackName: String)
 
     // Perform a logout redirect
-    fun startLogout(callbackName: String)
+    fun logout(callbackName: String)
 
     // For testing, make the access token act expired
     fun expireAccessToken(callbackName: String)
