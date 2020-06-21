@@ -1,6 +1,6 @@
 package com.authguidance.mobilewebview.plumbing.errors
 
-import org.json.JSONArray
+import android.util.Base64
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -41,17 +41,17 @@ class UIError(
             data.put("appAuthCode", this.appAuthCode)
         }
 
-        if (!this.details.isNullOrBlank()) {
-            data.put("details", this.details)
+        // These fields are serialized as base 64 to prevent issues with dangerous characters
+        val details = this.details
+        if (!details.isNullOrBlank()) {
+            val detailsEncoded = Base64.encode(this.details!!.toByteArray(), Base64.DEFAULT or Base64.NO_WRAP)
+            data.put("details", String(detailsEncoded))
         }
 
-        val frames = this.stackTrace
-        if (frames.isNotEmpty()) {
-            val framesArray = JSONArray()
-            for (frame in frames) {
-                framesArray.put(frame.toString())
-            }
-            data.put("stack", framesArray)
+        if (this.stackTrace.isNotEmpty()) {
+            val stack = this.stackTrace.joinToString(separator = "\n")
+            val stackEncoded = Base64.encode(stack.toByteArray(), Base64.DEFAULT or Base64.NO_WRAP)
+            data.put("stack", String(stackEncoded))
         }
 
         return data.toString()
