@@ -1,4 +1,4 @@
-package com.authguidance.mobilewebview.views.main
+package com.authguidance.mobilewebview.views.headings
 
 import android.app.Activity
 import android.os.Bundle

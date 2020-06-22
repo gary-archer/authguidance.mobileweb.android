@@ -12,6 +12,30 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- The title area shows the app name -->
+        <fragment
+            android:id="@+id/title_fragment"
+            android:name="com.authguidance.mobilewebview.views.headings.TitleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_title"/>
+
+        <!-- The menu area shows web integration buttons -->
+        <!--fragment
+            android:id="@+id/menu_fragment"
+            android:name="com.authguidance.mobilewebview.views.headings.MenuFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_menu"/-->
+
+        <!-- When there is an application level error it is rendered via this fragment -->
+        <!--fragment
+            android:id="@+id/main_error_summary_fragment"
+            android:name="com.authguidance.mobilewebview.views.errors.ErrorSummaryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_error_summary"/-->
+
         <!-- The navigation fragment occupies the entire view -->
         <fragment
             android:id="@+id/nav_host_fragment"
