@@ -5,8 +5,10 @@
 3. Get menu operations working
    Use isInitialised flag
 
-4. Intercept web view load errors on Android in the same way as iOS?
+4. Load SPA when button clicked - get openUrl working
+
+5. Intercept web view load errors on Android in the same way as iOS?
    The goal is a more controlled display
 
-5. Add larger styles file and test on tablet device
+6. Add larger styles file and test on tablet device
    Include orientation handling
