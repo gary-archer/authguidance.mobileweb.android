@@ -17,6 +17,9 @@ import org.greenrobot.eventbus.EventBus
  */
 public class MainActivityViewModel {
 
+    // A flag to record whether we initialised correctly
+    var isInitialised = false
+
     // Global objects
     var configuration: Configuration? = null
     var authenticator: AuthenticatorImpl? = null
@@ -25,8 +28,16 @@ public class MainActivityViewModel {
      * Load configuration and create global objects
      */
     fun initialise(context: Context) {
+
+        // Reset state flags
+        this.isInitialised = false
+
+        // Load configuration and create global objects
         this.configuration = ConfigurationLoader().load(context)
         this.authenticator = AuthenticatorImpl(this.configuration!!.oauth, context)
+
+        // Indicate successful startup
+        this.isInitialised = true
     }
 
     /*

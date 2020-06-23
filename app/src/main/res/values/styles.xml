@@ -12,12 +12,17 @@
         <item name="android:navigationBarColor">@color/primary_dark</item>
     </style>
 
-    <!-- The style for header text -->
-    <style name="TextViewHeaderStyle" parent="android:Widget.TextView">
+    <!-- The style for the app's main title text -->
+    <style name="TextViewTitleStyle" parent="android:Widget.TextView">
         <item name="android:textColor">@color/primary</item>
-        <item name="android:background">@color/text_white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- The style for screen headers -->
+    <style name="TextViewHeaderStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_value</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <!-- The style for label text -->

@@ -1,11 +1,12 @@
-1. Error display to improve
-   Remove white background hack
-   Improve spacing
+1. Mysterious grey background
 
-2. Implement menu view
+2. Implement menu view basics
 
-3. Intercept web view load errors on Android in the same way as iOS?
+3. Get menu operations working
+   Use isInitialised flag
+
+4. Intercept web view load errors on Android in the same way as iOS?
    The goal is a more controlled display
 
-4. Add larger styles file and test on tablet device
+5. Add larger styles file and test on tablet device
    Include orientation handling
