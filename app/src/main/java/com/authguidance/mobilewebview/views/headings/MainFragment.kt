@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.authguidance.mobilewebview.app.MainActivitySharedViewModel
 import com.authguidance.mobilewebview.databinding.FragmentMainBinding
-import com.authguidance.mobilewebview.plumbing.interop.JavascriptBridgeImpl
 import com.authguidance.mobilewebview.plumbing.interop.CustomWebChromeClient
 import com.authguidance.mobilewebview.plumbing.interop.CustomWebViewClient
+import com.authguidance.mobilewebview.plumbing.interop.JavascriptBridgeImpl
 
 /*
  * The host fragment for the web view

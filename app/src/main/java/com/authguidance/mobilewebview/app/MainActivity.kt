@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.ActivityMainBinding
-import com.authguidance.mobilewebview.plumbing.errors.ErrorCodes
-import com.authguidance.mobilewebview.plumbing.errors.ErrorConsoleReporter
 import com.authguidance.mobilewebview.plumbing.errors.ErrorHandler
-import com.authguidance.mobilewebview.plumbing.errors.UIError
 import com.authguidance.mobilewebview.views.errors.ErrorSummaryFragment
 import com.authguidance.mobilewebview.views.utilities.Constants
 

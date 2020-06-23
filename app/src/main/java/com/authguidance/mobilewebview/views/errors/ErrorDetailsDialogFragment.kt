@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.FragmentErrorDetailsBinding
 import com.authguidance.mobilewebview.plumbing.errors.ErrorFormatter
 import com.authguidance.mobilewebview.plumbing.errors.UIError
