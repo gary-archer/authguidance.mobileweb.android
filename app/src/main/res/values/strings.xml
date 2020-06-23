@@ -2,6 +2,8 @@
     <string name="launch_icon_name">Demo</string>
     <string name="app_title"><u>Mobile Web Integration</u></string>
 
+    <string name="main_error_hyperlink">Problem Encountered in Application</string>
+    <string name="main_error_dialogtitle">Application Error</string>
     <string name="error_user_message">User Message</string>
     <string name="error_area">Area</string>
     <string name="error_code">Error Code</string>

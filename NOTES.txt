@@ -1,4 +1,6 @@
-1. Implement errors view and test with incorrect config file
+1. Error display to improve
+   Remove white background hack
+   Improve spacing
 
 2. Implement menu view
 

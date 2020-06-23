@@ -20,4 +20,28 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <!-- The style for label text -->
+    <style name="TextViewLabelStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_label</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <!-- The style for value text -->
+    <style name="TextViewValueStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_value</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <!-- The style for error summary text -->
+    <style name="TextViewErrorSummaryStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_error</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
 </resources>

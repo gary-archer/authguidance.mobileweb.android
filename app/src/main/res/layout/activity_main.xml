@@ -29,12 +29,12 @@
             tools:layout="@layout/fragment_menu"/-->
 
         <!-- When there is an application level error it is rendered via this fragment -->
-        <!--fragment
+        <fragment
             android:id="@+id/main_error_summary_fragment"
             android:name="com.authguidance.mobilewebview.views.errors.ErrorSummaryFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_error_summary"/-->
+            tools:layout="@layout/fragment_error_summary"/>
 
         <!-- The navigation fragment occupies the entire view -->
         <fragment

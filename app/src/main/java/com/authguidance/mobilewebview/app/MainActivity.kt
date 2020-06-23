@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.authguidance.mobilewebview.R
 import com.authguidance.mobilewebview.databinding.ActivityMainBinding
+import com.authguidance.mobilewebview.plumbing.errors.ErrorCodes
 import com.authguidance.mobilewebview.plumbing.errors.ErrorConsoleReporter
 import com.authguidance.mobilewebview.plumbing.errors.ErrorHandler
 import com.authguidance.mobilewebview.plumbing.errors.UIError
+import com.authguidance.mobilewebview.views.errors.ErrorSummaryFragment
 import com.authguidance.mobilewebview.views.utilities.Constants
 
 /*
@@ -89,9 +91,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     /*
-     * For this sample we will simplify and just use console output of errors
+     * Receive unhandled exceptions and render the error fragment
      */
-    private fun handleError(error: UIError) {
-        ErrorConsoleReporter.output(error, this)
+    private fun handleError(exception: Throwable) {
+
+        // Get the error as a known object
+        val handler = ErrorHandler()
+        val error = handler.fromException(exception)
+
+        // Display summary details that can be clicked to invoke a dialog
+        val errorFragment = this.supportFragmentManager.findFragmentById(R.id.main_error_summary_fragment) as ErrorSummaryFragment
+        errorFragment.reportError(
+            this.getString(R.string.main_error_hyperlink),
+            this.getString(R.string.main_error_dialogtitle),
+            error
+        )
     }
 }
