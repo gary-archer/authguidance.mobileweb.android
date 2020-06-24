@@ -7,13 +7,14 @@
 
 ### Details
 
-* The ReactJS SPA can run in a web view and call back the mobile app to get tokens
-* The ReactJS SPA can run in the system browser using a one time tokes from the mobile app
-* See the **Mobile Web Integration Overview** page for a summary and instructions on how to run the code
+* See the **Mobile Web Integration Overview** page for a visual summary and instructions on how to run the code
 
-### Technologies
+### Technologies and Behaviour
 
-* Kotlin and Jetpack are used to develop a Single Activity App that uses web content from a Secured Cloud SPA
+* Kotlin and Jetpack are used to develop the Mobile Host App
+* Secured ReactJS SPA views can be run from the mobile app, without a second login 
+* SPA views can execute in a web view and call back the mobile app to get tokens
+* SPA views can execute in the system browser using a one time token sent from the mobile app
 
 ### Middleware Used
 
