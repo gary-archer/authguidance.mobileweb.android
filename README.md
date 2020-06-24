@@ -7,7 +7,9 @@
 
 ### Details
 
-* See the **Android WebView Overview** page for a summary and instructions on how to run the code
+* The ReactJS SPA can run in a web view and call back the mobile app to get tokens
+* The ReactJS SPA can run in the system browser using a one time tokes from the mobile app
+* See the **Mobile Web Integration Overview** page for a summary and instructions on how to run the code
 
 ### Technologies
 
