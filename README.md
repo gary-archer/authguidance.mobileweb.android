@@ -7,7 +7,7 @@
 
 ### Details
 
-* See the **Mobile Web Integration Overview** page for a visual summary and instructions on how to run the code
+* See the **Mobile Web Integration Overview** for a visual summary and instructions on how to run the code
 
 ### Technologies and Behaviour
 
