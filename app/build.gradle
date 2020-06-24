@@ -8,7 +8,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.authguidance.mobilewebview"
+        applicationId "com.authguidance.mobileweb"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
@@ -35,7 +35,7 @@ android {
         release {
             storeFile file("${rootDir}/security/app-keystore.jks")
             storePassword "android"
-            keyAlias "com.authguidance.mobilewebview"
+            keyAlias "com.authguidance.mobileweb"
             keyPassword "android"
         }
     }

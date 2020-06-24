@@ -12,9 +12,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.authguidance.mobilewebview",
+      "package_name": "com.authguidance.mobileweb",
       "sha256_cert_fingerprints":
-        ["2E:0E:68:BA:4D:95:D3:2C:51:BE:FA:23:B6:BA:CD:DA:FC:80:DA:30:D0:9D:26:79:DE:9C:A6:9D:3B:1A:18:2F"]
+        ["80:53:FE:18:84:D3:FF:44:FE:04:BF:44:FF:96:2A:CD:20:CF:0B:05:07:2A:FF:94:60:FD:DA:D0:E1:AB:67:56"]
     }
   }
 ]

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.authguidance.mobilewebview">
+    package="com.authguidance.mobileweb">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -17,7 +17,7 @@
         <!-- Our single activity uses single top which prevents recreating it when it is on top of the stack
              This also prevents activity restarts when the orientation is changed -->
         <activity
-            android:name=".app.MainActivity"
+            android:name="com.authguidance.mobileweb.app.MainActivity"
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize">
 
@@ -46,7 +46,7 @@
         </activity>
 
         <!-- Our custom receiver activity for logout responses -->
-        <activity android:name=".plumbing.oauth.logout.LogoutRedirectUriReceiverActivity">
+        <activity android:name="com.authguidance.mobileweb.plumbing.oauth.logout.LogoutRedirectUriReceiverActivity">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT"/>
