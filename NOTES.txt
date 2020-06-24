@@ -1,10 +1,13 @@
 1. Get menu operations working
    Use isInitialised flag to show / hide webview and other elements
 
-2. Load SPA when button clicked - get openUrl working
+2. Add descriptive text views as for iOS
 
-3. Intercept web view load errors on Android in the same way as iOS?
+3. Add larger styles file and test on tablet device
+   Include orientation handling
+
+3. Load SPA when button clicked - get openUrl working
+
+4. Intercept web view load errors on Android in the same way as iOS?
    The goal is a more controlled display
 
-4. Add larger styles file and test on tablet device
-   Include orientation handling
