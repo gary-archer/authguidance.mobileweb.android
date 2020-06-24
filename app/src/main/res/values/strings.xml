@@ -2,6 +2,9 @@
     <string name="launch_icon_name">Demo</string>
     <string name="app_title"><u>Mobile Web Integration</u></string>
 
+    <string name="webview_button">Run SPA in Web View</string>
+    <string name="system_browser_button">Run SPA in Browser</string>
+
     <string name="main_error_hyperlink">Problem Encountered in Application</string>
     <string name="main_error_dialogtitle">Application Error</string>
     <string name="error_user_message">User Message</string>

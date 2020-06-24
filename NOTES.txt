@@ -1,14 +1,10 @@
-1. Mysterious grey background
+1. Get menu operations working
+   Use isInitialised flag to show / hide webview and other elements
 
-2. Implement menu view basics
+2. Load SPA when button clicked - get openUrl working
 
-3. Get menu operations working
-   Use isInitialised flag
-
-4. Load SPA when button clicked - get openUrl working
-
-5. Intercept web view load errors on Android in the same way as iOS?
+3. Intercept web view load errors on Android in the same way as iOS?
    The goal is a more controlled display
 
-6. Add larger styles file and test on tablet device
+4. Add larger styles file and test on tablet device
    Include orientation handling

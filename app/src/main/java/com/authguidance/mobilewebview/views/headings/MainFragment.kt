@@ -44,8 +44,6 @@ class MainFragment : androidx.fragment.app.Fragment() {
         val authenticator = sharedViewModel.authenticatorAccessor()
         if (configuration != null && authenticator != null) {
 
-            val webRootUrl = configuration.app.webBaseUrl
-
             // Make a mobile bridge available to the SPA
             val bridge = JavascriptBridgeImpl(this.binding.webview, authenticator, this.context as Activity)
             this.binding.webview.addJavascriptInterface(bridge, "mobileBridge")
@@ -58,6 +56,7 @@ class MainFragment : androidx.fragment.app.Fragment() {
                 CustomWebChromeClient()
 
             // Load our SPA's content, which will trigger OAuth calls back to the mobile app later
+            val webRootUrl = configuration.app.webBaseUrl
             this.binding.webview.loadUrl(webRootUrl)
         }
     }
