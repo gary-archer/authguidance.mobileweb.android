@@ -1,5 +1,7 @@
 # authguidance.mobileweb.android
 
+[![Known Vulnerabilities](https://snyk.io/test/github/gary-archer/authguidance.mobileweb.android/badge.svg?targetFile=app/build.gradle)](https://snyk.io/test/github/gary-archer/authguidance.mobileweb.android?targetFile=app/build.gradle)
+
 ### Overview
 
 * An Android Sample using OAuth 2.0 and Open Id Connect, referenced in my blog at https://authguidance.com
