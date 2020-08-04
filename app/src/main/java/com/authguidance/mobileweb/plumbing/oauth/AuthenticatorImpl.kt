@@ -456,18 +456,18 @@ class AuthenticatorImpl(val configuration: OAuthConfiguration, val applicationCo
 
     /*
      * Return the URL to the interstitial page used for login redirects
-     * https://web.authguidance-examples.com/mobile/postlogin.html
+     * https://authsamples.com/apps/mobilewebapp/postlogin.html
      */
     private fun getLoginRedirectUri(): String {
-        return "${this.configuration.mobileBaseUrl}${this.configuration.loginRedirectPath}"
+        return "${this.configuration.webBaseUrl}${this.configuration.loginRedirectPath}"
     }
 
     /*
      * Return the URL to the interstitial page used for logout redirects
-     * https://web.authguidance-examples.com/mobile/postlogout.html
+     * https://authsamples.com/apps/mobilewebapp/postlogout.html
      */
     private fun getPostLogoutRedirectUri(): String {
-        return "${this.configuration.mobileBaseUrl}${this.configuration.postLogoutRedirectPath}"
+        return "${this.configuration.webBaseUrl}${this.configuration.postLogoutRedirectPath}"
     }
 
     /*
