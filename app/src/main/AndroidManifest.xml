@@ -40,8 +40,8 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
                     android:scheme="https"
-                    android:host="authguidance-examples.com"
-                    android:path="/webview/callback" />
+                    android:host="mobile.authsamples.com"
+                    android:path="/mobilewebapp/oauth/callback" />
             </intent-filter>
         </activity>
 
@@ -53,8 +53,8 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
                     android:scheme="https"
-                    android:host="authguidance-examples.com"
-                    android:path="/webview/logoutcallback" />
+                    android:host="mobile.authsamples.com"
+                    android:path="/mobilewebapp/oauth/logoutcallback" />
             </intent-filter>
         </activity>
     </application>

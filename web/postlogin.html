@@ -6,12 +6,19 @@
             https://github.com/iainmcgin/AppAuth-Demo -->
 
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <title>Logout Complete</title>
+        <title>Login Complete</title>
 
         <script>
-            window.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('DOMContentLoaded', function() {
 
-                var redirectUri = 'https://authguidance-examples.com/webview/logoutcallback';
+                var redirectUri = 'https://mobile.authsamples.com/mobilewebapp/oauth/callback';
+                if (window.location.search) {
+                    redirectUri += window.location.search;
+                }
+                if (window.location.hash) {
+                    redirectUri += window.location.hash;
+                }
+
                 document.getElementById('continueButton').onclick = () => {
                     window.location.href = redirectUri;
                 };
@@ -33,9 +40,6 @@
                 background-color: #2196F3;
                 font-size: 16px;
             }
-            #usermessage {
-                align-content: center;
-            }
             #heading {
                 color: #2196F3;
             }
@@ -43,8 +47,8 @@
     </head>
     <body>
         <div id='container'>
-            <h3 id='heading'>Logout Complete</h3>
-            <h5>You have successfully signed out</h5>
+            <h3 id='heading'>Login Complete</h3>
+            <h5>You have securely verified your identity</h5>
             <button id='continueButton'>Continue</button>
         </div>
     </body>
